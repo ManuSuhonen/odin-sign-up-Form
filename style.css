@@ -13,7 +13,7 @@
 body * {
     resize: both;
     overflow: auto;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 main {
@@ -47,7 +47,7 @@ main {
         width: 100%;
 
         p {
-            height: fit-content;
+            /* height: fit-content; */
             align-self: center;
             text-align: left;
             align-content: end;
@@ -87,5 +87,23 @@ main {
     #right_side_3 {
         height: var(--main-rows-height);
         background-color: rgb(249 250 251);
+        padding: 40px 60px 40px 60px;
+
+        button {
+            /* 596d48 */
+            background: #596d48;
+            background-image: linear-gradient(to bottom, #596d48, #596d48);
+            border-radius: 9px;
+            box-shadow: 0px 1px 3px #596d48;
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 17px;
+            background: #596d48;
+            padding: 20px 50px 20px 50px;
+            text-decoration: none;
+            outline-color: #596d48;
+            border-color: #596d48;
+            stop-color: #596d48;
+        }
     }
 }
