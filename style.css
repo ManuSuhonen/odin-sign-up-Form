@@ -1,47 +1,56 @@
-@font-face {
-    font-family: "Norse";
-    src: url("./font/Norse-Bold.otf");
+:root {
+    --logo-height: 170px;
+    --logo-offset: calc(calc(100vh / 3) - var(--logo-height));
+    --main-rows-height: calc(100vh / 3);
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    outline: 1px solid red;
 }
 
+body * {
+    resize: both;
+    overflow: auto;
+    outline: 1px solid red;
+}
 
 main {
     display: flex;
     height: 100vh;
 }
 
-#left_side {
+@font-face {
     font-family: "Norse";
+    src: url("./font/Norse-Bold.otf");
+}
+
+#left_side {
+    font-family: "Norse", system-ui;
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     flex-basis: 30%;
     background-image: url("./images/background.avif");
     background-size: auto 100%;
 
     #logo {
+        margin-top: var(--logo-offset);
         padding: 10px 0;
-        background-color: rgba(0, 0, 0, 0.523);
-        font-size: 4em;
+        background-color: rgba(0, 0, 0, 0.623);
+        font-size: 7em;
 
         display: flex;
         justify-content: center;
-        align-items: flex-end;
 
-        height: 100px;
+        height: var(--logo-height);
         width: 100%;
 
-        img {
-            height: 100%;
-            vertical-align: middle;
+        p {
+            height: fit-content;
+            align-self: center;
+            text-align: left;
+            align-content: end;
         }
     }
 }
@@ -50,37 +59,33 @@ main {
     display: flex;
     flex-direction: column;
     flex-basis: 70%;
+    font-family: 'Roboto';
 
     #right_side_1 {
-        font-family: system-ui;
-        font-size: 2em;
+        height: var(--main-rows-height);
         background-color: rgb(249 250 251);
 
-        flex: 1;
-        padding: 1em;
+        font-size: 2em;
+        font-weight: 1000;
+
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 40px 40px 40px;
+        justify-content: flex-end;
+
+    
     }
 
     #right_side_2 {
-        flex: 0.5;
-        box-shadow: 0px 2px 6px 0px #000000;
-
-        .wrapper {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: minmax(100px, auto);
-        }
-
-        .one {
-            grid-column: 1 / 3;
-            grid-row: 1;
-            align-content: center;
-        }
+        height: var(--main-rows-height);
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px 4px #000000;
+        z-index: 1;
     }
 
     #right_side_3 {
-        flex: 1;
+        height: var(--main-rows-height);
+        background-color: rgb(249 250 251);
     }
-
-    /* padding: 1em 1em; */
-
 }
