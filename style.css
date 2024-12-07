@@ -13,7 +13,7 @@
 body * {
     resize: both;
     overflow: auto;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 main {
@@ -47,7 +47,6 @@ main {
         width: 100%;
 
         p {
-            /* height: fit-content; */
             align-self: center;
             text-align: left;
             align-content: end;
@@ -85,9 +84,18 @@ main {
     }
 
     #right_side_3 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+
         height: var(--main-rows-height);
         background-color: rgb(249 250 251);
         padding: 40px 60px 40px 60px;
+
+        span {
+            color: #596d48;
+        }
 
         button {
             /* 596d48 */
