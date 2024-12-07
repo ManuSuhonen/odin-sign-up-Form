@@ -26,43 +26,45 @@
             </div>
             <div id="right_side_2">
                 <p>Let's do this!</p>
-                <form action="#">
+                <form id="myform" action="#">
                     <div id="container">
                         <div>
                             <label for="first_name">FIRST NAME </label>
                             <br>
-                            <input type="text" name="first-name" id="first_name">
+                            <input type="text" name="first-name" id="first_name" required placeholder="John">
                         </div>
                         <div>
                             <label for="last_name">LAST NAME </label>
                             <br>
-                            <input type="text" name="last-name" id="last_name">
+                            <input type="text" name="last-name" id="last_name" required placeholder="Washington">
                         </div>
                         <div>
-                            <label for="email">EMAIL</label>
+                            <label for="email_Address">EMAIL</label>
                             <br>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="emailAddress" id="email_Address" required
+                                placeholder="john.washington@email.com">
                         </div>
                         <div>
                             <label for="phone_number">PHONE NUMBER</label>
                             <br>
-                            <input type="tel" name="phone-number" id="phone_number">
+                            <input type="tel" name="phone-number" id="phone_number" minlength="10" required
+                                placeholder="0448645992">
                         </div>
                         <div>
                             <label for="password">PASSWORD</label>
                             <br>
-                            <input type="password" name="password" id="password">
+                            <input type="password" name="password" id="password" required>
                         </div>
                         <div>
                             <label for="confirm_password">CONFIRM PASSWORD</label>
                             <br>
-                            <input type="password" name="confirm-password" id="confirm_password">
+                            <input type="password" name="confirm-password" id="confirm_password" required>
                         </div>
                 </form>
             </div>
         </div>
         <div id="right_side_3">
-            <button type="button">Create Account</button>
+            <button form="myform" id="submit_button" type="submit">Create Account</button>
             <p>Already have an account? <span>Log in</span></p>
         </div>
         </div>

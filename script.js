@@ -2,12 +2,16 @@ console.clear();
 
 console.log("Helo World");
 
-// window.getComputedStyle( $0, null )['fontFamily'];
+myForm = document.forms['myform'];
 
-// window.getComputedStyle( $0, null ).getPropertyValue( 'font-family' );
+myForm ? null : console.error("myForm is", myForm);
 
-// queryselectAll "For web developers (non-normative)" examples
+pwInput1 = myForm['password'];
+pwInput2 = myForm['confirm-password'];
 
-// $$('.domintro')
+pwInput1 ? null : console.error("pwInput1 is", pwInput1);
+pwInput2 ? null : console.error("pwInput2 is", pwInput2);
 
-// console.table($0,['index','value'])
+pwInput2.oninput = (obj) => {
+    pwInput2.setCustomValidity(pwInput1.value != pwInput2.value ? 'Passwords do not match.' : '');
+}
