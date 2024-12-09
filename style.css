@@ -10,15 +10,13 @@
     margin: 0;
 }
 
-body * {
-    /* test/dev purpose */
-    /* resize: both; */
-    /* overflow: auto; */
-    /* outline: 1px solid red; */
+body {
+    font-family: 'Roboto', system-ui;
 }
 
 main {
     display: flex;
+    height: 100vh;
 }
 
 @font-face {
@@ -27,19 +25,25 @@ main {
 }
 
 #left_side {
-    font-family: "Norse", system-ui;
     color: white;
     display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    flex-direction: column;
     flex-basis: 30%;
     background-image: url("./images/background.avif");
     background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
 
-    #logo {
+    >#logo {
+        font-family: "Norse", system-ui;
         margin-top: var(--logo-offset);
         padding: 10px 0;
         background-color: rgba(0, 0, 0, 0.623);
+        background-size: cover;
         font-size: 7rem;
 
         display: flex;
@@ -54,6 +58,11 @@ main {
             align-content: end;
         }
     }
+
+    >p {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 #right_side {
@@ -61,16 +70,13 @@ main {
     flex-direction: column;
     flex-basis: 70%;
 
-    font-family: 'Roboto';
     font-size: 2em;
     font-weight: 1000;
 
     #right_side_1 {
-        height: var(--main-rows-height);
         background-color: rgb(249 250 251);
 
-
-
+        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -81,21 +87,17 @@ main {
     }
 
     #right_side_2 {
-        height: var(--main-rows-height);
+        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
         gap: 30px;
+        min-height: 360px;
 
         background-color: rgb(255, 255, 255);
         box-shadow: 0px 0px 10px 4px #000000;
         z-index: 1;
 
         padding: 25px 50px 30px 50px;
-
-        p {
-            min-height: fit-content;
-            flex-shrink: 0;
-        }
 
         form {
             font-size: 1rem;
@@ -104,21 +106,23 @@ main {
 
             #container {
                 display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(3, auto);
                 height: 100%;
-
-                grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: calc(100% / 3);
 
                 div {
                     align-content: center;
+                    min-height: fit-content;
 
                     label {
-                        font-size: 0.8rem;
+                        font-size: 1.5rem;
+                        min-height: fit-content;
                     }
 
                     input {
-                        width: 260px;
-                        height: 30px;
+                        font-size: 1.5rem;
+                        width: 360px;
+                        height: fit-content;
                     }
 
                     #password:user-invalid {
@@ -134,13 +138,13 @@ main {
     }
 
     #right_side_3 {
+        flex: 1 1 auto;
         font-size: 1rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
 
-        height: var(--main-rows-height);
         background-color: rgb(249 250 251);
         padding: 40px 60px 40px 60px;
 
@@ -152,7 +156,6 @@ main {
             background: #596d48;
             border-radius: 9px;
             box-shadow: 0px 1px 3px #596d48;
-            font-family: Arial;
             color: #ffffff;
             font-size: 17px;
             padding: 20px 50px 20px 50px;
