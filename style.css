@@ -41,12 +41,12 @@ main {
     background-size: cover;
 
     >#logo {
+        overflow: hidden;
         font-family: "Norse", system-ui;
         margin-top: var(--logo-offset);
         padding: 10px 0;
         background-color: rgba(0, 0, 0, 0.623);
         background-size: cover;
-        font-size: 7rem;
 
         display: flex;
         justify-content: center;
@@ -55,13 +55,14 @@ main {
         width: 100%;
 
         p {
+            font-size: 7rem;
             align-self: center;
             text-align: left;
             align-content: end;
         }
     }
 
-    >p {
+    p {
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
@@ -73,7 +74,7 @@ main {
     flex-basis: 70%;
 
     font-size: 2em;
-    font-weight: 1000;
+    font-weight: bold;
 
     #right_side_1 {
         background-color: rgb(249 250 251);

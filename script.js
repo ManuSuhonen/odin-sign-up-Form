@@ -11,7 +11,11 @@ rightTop = document.querySelector('#right_side_1');
 logo = document.querySelector('#logo');
 logoHeight = window.getComputedStyle(logo).height
 
-window.addEventListener('resize', function () {
+function setOffset() {
     let topOffset = rightTop.offsetHeight - logo.offsetHeight;
     logo.style.marginTop = topOffset + "px";
-});
+}
+
+setOffset();
+
+window.onresize = setOffset;
